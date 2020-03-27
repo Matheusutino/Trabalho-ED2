@@ -3,8 +3,9 @@
 #include "funcoes.h"
 
 int main(){
-    int **matriz,linhas,colunas,coord_x,coord_y;
+    int **matriz,*linhas,colunas,coord_x,coord_y;
     FILE *Arquivo;
+    Lista *li=cria_lista();
     char nome_arquivo[30];
 
     //Realizando a leitura dos dados de entrado do arquivo
@@ -20,8 +21,14 @@ int main(){
     }
     fscanf(Arquivo,"%d %d",&coord_x,&coord_y);
     fclose(Arquivo);
-    Flood_Fill(matriz,linhas,colunas,coord_x,coord_y,matriz[coord_x][coord_y],2); //A nova cor sera o valor inteiro 2
+
+    Flood_Fill(matriz,linhas,colunas,coord_x,coord_y,matriz[coord_x][coord_y],2,li); //A nova cor sera o valor inteiro 2
+
+    printf("Total : %d\n",tamanho_lista(li));
+    imprime_lista(li);
     Imprime_Matriz(matriz,linhas,colunas);
-    //Desaloca_Matriz(matriz,linhas);
+
+    Desaloca_Matriz(matriz,linhas);
+    libera_lista(li);
 
 }

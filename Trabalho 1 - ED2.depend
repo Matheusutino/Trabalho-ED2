@@ -6,14 +6,19 @@
 
 1585311212 c:\users\matheus\desktop\trabalho 1 - ed2\funções.h
 
-1585325627 source:c:\users\matheus\desktop\trabalho 1 - ed2\main.c
+1585334673 source:c:\users\matheus\desktop\trabalho 1 - ed2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoes.h"
 
-1585325627 c:\users\matheus\desktop\trabalho 1 - ed2\funcoes.h
+1585332506 c:\users\matheus\desktop\trabalho 1 - ed2\funcoes.h
 
-1585327840 source:c:\users\matheus\desktop\trabalho 1 - ed2\funcoes.c
+1585334736 source:c:\users\matheus\desktop\trabalho 1 - ed2\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes.h"
+
+1585334673 source:c:\users\matheus\desktop\trabalho 1 - ed2\lded.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoes.h"

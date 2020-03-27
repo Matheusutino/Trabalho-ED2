@@ -19,27 +19,31 @@ void Imprime_Matriz(int **matriz,int linhas,int colunas){ //Imprime a matriz
     }
 }
 
-void Desaloca_Matriz(int **matriz,int linhas){ //Libera a matriz criada dinamicamente
+int** Desaloca_Matriz(int **matriz,int linhas){ //Libera a matriz criada dinamicamente
     for(int i=0;i<linhas;i++)
         free(matriz[i]);
     free(matriz);
+    return matriz; //retorna o ponteiro NULL da matriz
 }
 
 
-void Flood_Fill(int **matriz,int linhas,int colunas,int x,int y,int cor_origem,int cor_nova){ //Algoritmo de  preenchimento de inundac˜ao
+void Flood_Fill(int **matriz,int linhas,int colunas,int x,int y,int cor_origem,int cor_nova,Lista *li){ //Algoritmo de  preenchimento de inundac˜ao
+    Tipo_Dado Dado;
     if(x < 0 || x >= linhas || y < 0 || y >= colunas) return; //Verificando se a posição do nó durante a recursão é valida,ou seja, se existe na matriz,caso não exista retorna para a recursão anterior
     if(matriz[x][y] != cor_origem) return; //Caso a cor de um nó adjacente não for igual a cor de origem retorna para a recursão anterior
     matriz[x][y] = cor_nova; //Se o nó adjacente for igual a cor de origem a cor sera trocada para um nova,como propoe o método flood_fill
-    printf("%d %d\n",x,y);
+    Dado.x=x;
+    Dado.y=y;
+    insere_lista_ordenada(li,Dado); //Inserindo as coordernadas na lista dinamica
     //Verificando todos os 8 possíveis posições dos nós ao redor(quadrado em volta do nó a ser analisado)
-    Flood_Fill(matriz,linhas,colunas,x+1,y,cor_origem,cor_nova);
-    Flood_Fill(matriz,linhas,colunas,x+1,y+1,cor_origem,cor_nova);
-    Flood_Fill(matriz,linhas,colunas,x+1,y-1,cor_origem,cor_nova);
-    Flood_Fill(matriz,linhas,colunas,x,y+1,cor_origem,cor_nova);
-    Flood_Fill(matriz,linhas,colunas,x,y-1,cor_origem,cor_nova);
-    Flood_Fill(matriz,linhas,colunas,x-1,y,cor_origem,cor_nova);
-    Flood_Fill(matriz,linhas,colunas,x-1,y+1,cor_origem,cor_nova);
-    Flood_Fill(matriz,linhas,colunas,x-1,y-1,cor_origem,cor_nova);
+    Flood_Fill(matriz,linhas,colunas,x+1,y,cor_origem,cor_nova,li);
+    Flood_Fill(matriz,linhas,colunas,x+1,y+1,cor_origem,cor_nova,li);
+    Flood_Fill(matriz,linhas,colunas,x+1,y-1,cor_origem,cor_nova,li);
+    Flood_Fill(matriz,linhas,colunas,x,y+1,cor_origem,cor_nova,li);
+    Flood_Fill(matriz,linhas,colunas,x,y-1,cor_origem,cor_nova,li);
+    Flood_Fill(matriz,linhas,colunas,x-1,y,cor_origem,cor_nova,li);
+    Flood_Fill(matriz,linhas,colunas,x-1,y+1,cor_origem,cor_nova,li);
+    Flood_Fill(matriz,linhas,colunas,x-1,y-1,cor_origem,cor_nova,li);
 }
 
 
