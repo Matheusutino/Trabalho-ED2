@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1585311199 source:c:\users\matheus\desktop\trabalho 1 - ed2\funções.c
+	<stdio.h>
+	<stdlib.h>
+	"Funções.h"
+
+1585311212 c:\users\matheus\desktop\trabalho 1 - ed2\funções.h
+
+1585325627 source:c:\users\matheus\desktop\trabalho 1 - ed2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes.h"
+
+1585325627 c:\users\matheus\desktop\trabalho 1 - ed2\funcoes.h
+
+1585327840 source:c:\users\matheus\desktop\trabalho 1 - ed2\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes.h"
+
